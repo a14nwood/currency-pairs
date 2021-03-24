@@ -1,0 +1,50 @@
+.PairPrice {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.PairPrice-currencyDisplay {
+  font-size: calc(12px + 2vmax);
+  padding: calc(8px + 2vmax) 0;
+  text-align: left;
+}
+
+.PairPrice-currencyInput {
+  background-color: hsl(0, 0%, 15%);
+  border-radius: 12px;
+  border: 2px solid hsla(0, 0%, 60%, 50%);
+  color: hsl(215, 70%, 70%);
+  font-size: calc(12px + 2vmax);
+  line-height: calc(12px + 2vmax);
+  margin: 0 3%;
+  outline: none;
+  text-align: center;
+  width: 20%;
+}
+
+.PairPrice-timespanSelection {
+  display: flex;
+  margin-bottom: 2vmax;
+  width: 100%;
+}
+
+.PairPrice-timespanButton {
+  background-color: hsl(0, 0%, 15%);
+  border: none;
+  color: hsl(0, 0%, 85%);
+  cursor: pointer;
+  font-family: Arial;
+  font-size: calc(8px + 1vmax);
+  margin: 0 .5vmax;
+  outline: none;
+  padding: 1vmax 0;
+  width: 100%;
+}
+
+.PairPrice-timespanButton:hover {
+  background-color: hsl(0, 0%, 20%);
+}
+
+.PairPrice-timespanButton-active {
+  background-color: hsl(0, 0%, 20%);
+}

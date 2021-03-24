@@ -1,14 +1,7 @@
 .App {
-  text-align: center;
-}
-
-.App-header {
-  align-items: center;
-  background-color: #282c34;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  justify-content: center;
+  background-color: hsl(0, 0%, 15%);
+  color: hsl(0, 0%, 85%);
+  font: Arial, sans-serif;
   min-height: 100vh;
+  text-align: center;
 }
