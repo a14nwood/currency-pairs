@@ -13,6 +13,9 @@
   "dependencies": {
     "@sushiswap/sushi-data": "^1.0.7",
     "express": "^4.17.1",
+    "graph-results-pager": "^1.0.3",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
     "luxon": "^1.26.0"
   }
 }

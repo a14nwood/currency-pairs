@@ -6,11 +6,11 @@ export default function PriceViewer() {
   const [priceData, setPriceData] = useState([]);
   const [baseCurrency, setBaseCurrency] = useState('ETH');
   const [quoteCurrency, setQuoteCurrency] = useState('USD');
-  const [timespan, setTimespan] = useState('24hr');
+  const [timespan, setTimespan] = useState('1D');
 
   useEffect(() => {
-    const pairId = 'eth';
-    fetch('/pair:' + pairId)
+    const pairId = 'USDC-WETH';
+    fetch('/pair/:' + pairId)
       .then(res => res.json())
       .then(data => setPriceData(data))
       .catch(err => console.error(err));
@@ -26,40 +26,40 @@ export default function PriceViewer() {
     <div className='PairPrice'>
       <div className='PairPrice-currencyDisplay'>
         Price of
-        <input className='PairPrice-currencyInput' value='ETH' />
+        <input className='PairPrice-currencyInput' value='USDC' />
         vs.
-        <input className='PairPrice-currencyInput' value='USD' />
+        <input className='PairPrice-currencyInput' value='WETH' />
       </div>
       <div className='PairPrice-timespanSelection'>
         <button
-          className={buttonClassName('24hr')}
-          onClick={() => setTimespan('24hr')}
+          className={buttonClassName('1D')}
+          onClick={() => setTimespan('1D')}
         >
-          24hr
+          1D
         </button>
         <button
-          className={buttonClassName('1wk')}
-          onClick={() => setTimespan('1wk')}
+          className={buttonClassName('7D')}
+          onClick={() => setTimespan('7D')}
         >
-          1wk
+          7D
         </button>
         <button
-          className={buttonClassName('1mo')}
-          onClick={() => setTimespan('1mo')}
+          className={buttonClassName('30D')}
+          onClick={() => setTimespan('30D')}
         >
-          1mo
+          30D
         </button>
         <button
-          className={buttonClassName('6mo')}
-          onClick={() => setTimespan('6mo')}
+          className={buttonClassName('90D')}
+          onClick={() => setTimespan('90D')}
         >
-          6mo
+          90D
         </button>
         <button
-          className={buttonClassName('1yr')}
-          onClick={() => setTimespan('1yr')}
+          className={buttonClassName('365D')}
+          onClick={() => setTimespan('365D')}
         >
-          1yr
+          365D
         </button>
       </div>
       {priceData.length
