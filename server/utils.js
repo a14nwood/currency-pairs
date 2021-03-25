@@ -66,6 +66,9 @@ function getTimestamps(initialTime, timeBound, timeIncrement, data) {
     data.push({ time: time.toString() });
     timestamps.push(time.toSeconds());
   }
+  time = DateTime.now().startOf('second');
+  data.push({ time: time.toString() });
+  timestamps.push(time.toSeconds());
   return timestamps;
 }
 
@@ -78,7 +81,7 @@ async function timestampsToBlocks(timestamps) {
         orderDirection: desc,
         where: { timestamp_lte: ${timestamp}}
       ) { number }`
-    ))}
+  ))}
   }`);
 
   result = Object.keys(result)
