@@ -67,7 +67,7 @@ function getTimestamps(initialTime, timeBound, timeIncrement, data) {
     data.push({ time: time.toString() });
     timestamps.push(time.toSeconds());
   }
-  time = DateTime.now().startOf('second');
+  time = DateTime.now().startOf('minute').minus({ minute: 1 });
   data.push({ time: time.toString() });
   timestamps.push(time.toSeconds());
   return timestamps;
