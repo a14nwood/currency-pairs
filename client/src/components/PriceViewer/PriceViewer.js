@@ -69,7 +69,7 @@ export default function PriceViewer() {
       {priceData
         ? priceData.length
           ? <PriceChart priceData={priceData} baseCurrency={baseCurrency} />
-          : <div className="lds-default">
+          : <div className="PriceViewer-loading lds-default">
             <div></div><div></div><div></div><div></div><div></div><div></div>
             <div></div><div></div><div></div><div></div><div></div><div></div>
           </div>

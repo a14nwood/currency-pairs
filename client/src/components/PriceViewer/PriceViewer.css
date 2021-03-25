@@ -25,11 +25,9 @@
 }
 
 .PriceViewer-priceDisplay {
-  background-color: hsl(215, 15%, 12.5%);
-  border-radius: 8px;
   font-size: calc(10px + 1.5vh);
   margin-bottom: 1vh;
-  padding: 1.5vh;
+  padding: 1.5vh 0;
   text-align: left;
   width: fit-content;
 }
@@ -60,6 +58,10 @@
 .PriceViewer-timespanButton-active {
   border-bottom: 2px solid hsl(215, 75%, 50%);
   color: hsl(215, 75%, 50%);
+}
+
+.PriceViewer-loading {
+  margin-top: 20vh;
 }
 
 .PriceViewer-noData {
