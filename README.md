@@ -1,10 +1,10 @@
 # Currency Pair Viewer
 
 ## Features
-- Allows typing the symbols of any two currencies for which a pair in the Sushiswap network exists, updating as soon as they are typed
-- Displays current price of specified pair
-- Interactively graphs price history over five selectable timespans
-- Scales to various window sizes
+- Allows typing the symbols of any two currencies for which a pair in the Sushiswap network exists, updating as soon as they are typed.
+- Displays current price of specified pair.
+- Interactively graphs price history over five selectable timespans.
+- Scales to various window sizes.
 
 ## How to run
 After cloning the repository, `cd` to its directory and run the following commands:
