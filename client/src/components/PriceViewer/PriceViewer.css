@@ -5,7 +5,7 @@
 
 .PriceViewer-currencyDisplay {
   font-size: calc(12px + 2vmax);
-  padding-top: 1vh;
+  padding-top: 2vh;
   padding-bottom: 2vh;
   text-align: left;
 }
