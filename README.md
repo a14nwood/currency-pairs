@@ -1,5 +1,7 @@
 # Currency Pair Viewer
 
+![Demo showing a user navigating the Currency Pair Viewer](demo.gif)
+
 ## Features
 - Allows typing the symbols of any two currencies for which a pair in the Sushiswap network exists, updating as soon as they are typed.
 - Displays current price of specified pair.
