@@ -19,7 +19,7 @@ The application should open automatically in your browser. If not, go to [localh
 I suspected that the challenge of using GraphQL over `sushi-data` was a bit of a trick, testing to see if I would insist on rolling my own solution when it is not necessary. Even if that is the case, however, I think the use of in-house GraphQL calls was justified as it reduced the amount of data to transport to only that which the application needs, greatly improving load times.
 
 ## Production tweaks
-Were this application to be deployed to production, the first addition would likely be to cache pair prices using `memcache` or otherwise so users could see further reduced load times.
+Were this application to be deployed to production, the first addition would likely be to cache pair prices using `memcached` or otherwise so users could see further reduced load times.
 
 ## Credits
 [graphql-request](https://github.com/prisma-labs/graphql-request) is used for GraphQL queries;
