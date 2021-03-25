@@ -15,7 +15,7 @@ npm install
 npm run install-all-deps
 npm start
 ```
-The application should open automatically in your browser. If not, go to [localhost:3000](localhost:3000) after the terminal has indicated that the server is running and compilation was successful.
+The application should open automatically in your browser. If not, go to [localhost:3000](http://localhost:3000) after the terminal has indicated that the server is running and compilation was successful.
 
 ## Note
 I suspected that the challenge of using GraphQL over `sushi-data` was a bit of a trick, testing to see if I would insist on rolling my own solution when it is not necessary. Even if that is the case, however, I think the use of in-house GraphQL calls was justified as it reduced the amount of data to transport to only that which the application needs, greatly improving load times.
