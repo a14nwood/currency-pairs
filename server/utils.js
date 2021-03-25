@@ -14,6 +14,7 @@ async function blocksToPairs(blocks, pairAddress) {
       }
     `)}
   }`);
+
   return Object.entries(result)
     .sort((a, b) => (
       Number(a[0].split('block')[1]) - Number(b[0].split('block')[1])
