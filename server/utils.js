@@ -58,6 +58,17 @@ function getTimespanParams(timespan) {
   }
 }
 
+function getTimestamps(initialTime, timeBound, timeIncrement, data) {
+  let time = initialTime;
+  const timestamps = [];
+  for (let i = 0; i < timeBound; ++i) {
+    time = time.plus(timeIncrement);
+    data.push({ time: time.toString() });
+    timestamps.push(time.toSeconds());
+  }
+  return timestamps;
+}
+
 async function timestampsToBlocks(timestamps) {
   let result = await request(BLOCKLYTICS_API, gql`{
     ${timestamps.map(timestamp => (gql`
@@ -67,8 +78,7 @@ async function timestampsToBlocks(timestamps) {
         orderDirection: desc,
         where: { timestamp_lte: ${timestamp}}
       ) { number }`
-  ))
-    }
+    ))}
   }`);
 
   result = Object.keys(result)
@@ -78,4 +88,9 @@ async function timestampsToBlocks(timestamps) {
   return Object.values(result).map(e => Number(e[0].number));
 }
 
-module.exports = { blocksToPairs, getTimespanParams, timestampsToBlocks };
+module.exports = {
+  blocksToPairs,
+  getTimespanParams,
+  getTimestamps,
+  timestampsToBlocks
+};

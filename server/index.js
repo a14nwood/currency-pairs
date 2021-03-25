@@ -1,5 +1,9 @@
-const { blocksToPairs, getTimespanParams, timestampsToBlocks } = require('./utils');
-const { request, gql } = require('graphql-request');
+const {
+  blocksToPairs,
+  getTimespanParams,
+  getTimestamps,
+  timestampsToBlocks
+} = require('./utils');
 const express = require('express');
 const pageResults = require('graph-results-pager');
 
@@ -20,18 +24,10 @@ app.get('/pair/:pair', async (req, res) => {
     priceAccess = 'token1Price';
   }
   const timespan = req.query.timespan;
-  const [initialTime, timeBound, timeIncrement] = getTimespanParams(timespan);
-
-  let data = [];
 
   try {
-    const timestamps = [];
-    let time = initialTime;
-    for (let i = 0; i < timeBound; ++i) {
-      time = time.plus(timeIncrement);
-      data.push({ time: time.toString() });
-      timestamps.push(time.toSeconds());
-    }
+    let data = [];
+    const timestamps = getTimestamps(...getTimespanParams(timespan), data);
     const blocks = await timestampsToBlocks(timestamps);
     const pairs = await blocksToPairs(blocks, pairAddress);
     pairs.forEach((pair, i) => {
