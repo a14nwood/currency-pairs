@@ -50,7 +50,7 @@ function getTimespanParams(timespan) {
     case '365D':
       return [
         DateTime.now().minus({ day: 365 }).startOf('day'),
-        365,
+        365 / 5,
         { day: 5 }
       ];
     default:

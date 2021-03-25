@@ -1,20 +1,22 @@
-.PairPrice {
+.PriceViewer {
   margin: 0 auto;
   width: 90%;
 }
 
-.PairPrice-currencyDisplay {
+.PriceViewer-currencyDisplay {
   font-size: calc(12px + 2vmax);
-  padding: calc(8px + 2vmax) 0;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
   text-align: left;
 }
 
-.PairPrice-currencyInput {
-  background-color: hsl(0, 0%, 15%);
-  border-radius: 12px;
-  border: 2px solid hsla(0, 0%, 60%, 50%);
-  color: hsl(215, 70%, 70%);
+.PriceViewer-currencyInput {
+  background-color: hsl(215, 15%, 12.5%);
+  border-radius: 4px;
+  border: none;
+  color: hsl(215, 75%, 50%);
   font-size: calc(12px + 2vmax);
+  height: calc(12px + 4vmax);
   line-height: calc(12px + 2vmax);
   margin: 0 3%;
   outline: none;
@@ -22,30 +24,44 @@
   width: 20%;
 }
 
-.PairPrice-timespanSelection {
+.PriceViewer-priceDisplay {
+  background-color: hsl(215, 15%, 12.5%);
+  border-radius: 8px;
+  font-size: calc(10px + 1vmax);
+  margin-bottom: 1vh;
+  padding: 1vh;
+  text-align: left;
+  width: fit-content;
+}
+
+.PriceViewer-timespanSelection {
   display: flex;
-  height: 5vmax;
-  margin-bottom: 2vmax;
+  height: 10vh;
+  margin-bottom: 4vh;
   width: 100%;
 }
 
-.PairPrice-timespanButton {
-  background-color: hsl(0, 0%, 15%);
+.PriceViewer-timespanButton {
+  background-color: hsl(215, 10%, 10%);
   border: none;
   color: hsl(0, 0%, 85%);
   cursor: pointer;
   font-family: Arial;
-  font-size: calc(8px + 1vmax);
-  margin: 0 .5vmax;
+  font-size: calc(10px + 1vmax);
   outline: none;
   padding: 1vmax 0;
   width: 100%;
 }
 
-.PairPrice-timespanButton:hover {
-  background-color: hsl(0, 0%, 20%);
+.PriceViewer-timespanButton:hover {
+  color: hsl(215, 75%, 50%);
 }
 
-.PairPrice-timespanButton-active {
-  background-color: hsl(0, 0%, 20%);
+.PriceViewer-timespanButton-active {
+  border-bottom: 2px solid hsl(215, 75%, 50%);
+  color: hsl(215, 75%, 50%);
+}
+
+.PriceViewer-noData {
+  font-size: calc(14px + 1vmax);
 }

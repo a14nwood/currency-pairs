@@ -13,11 +13,16 @@ const app = express();
 
 app.get('/pair/:pair', async (req, res) => {
   const [currency1, currency2] = req.params.pair.substring(1).split('-');
-  const pairAddress = symbolsToPairAddress.get(`${currency1}-${currency2}`);
-  const timespan = '1D';
+  let pairAddress = symbolsToPairAddress.get(`${currency1}-${currency2}`);
+  let priceAccess = 'token0Price';
+  if (!pairAddress) {
+    pairAddress = symbolsToPairAddress.get(`${currency2}-${currency1}`);
+    priceAccess = 'token1Price';
+  }
+  const timespan = req.query.timespan;
   const [initialTime, timeBound, timeIncrement] = getTimespanParams(timespan);
 
-  const data = [];
+  let data = [];
 
   try {
     const timestamps = [];
@@ -29,8 +34,10 @@ app.get('/pair/:pair', async (req, res) => {
     }
     const blocks = await timestampsToBlocks(timestamps);
     const pairs = await blocksToPairs(blocks, pairAddress);
-    console.log(pairs);
-    pairs.forEach((pair, i) => data[i].price = Number(pair.token0Price));
+    pairs.forEach((pair, i) => {
+      data[i].price = pair ? Number(pair[priceAccess]) : null
+    });
+    data = data.filter(item => item.price !== null);
     res.status(200).json(data);
   } catch (err) {
     console.error(err);
